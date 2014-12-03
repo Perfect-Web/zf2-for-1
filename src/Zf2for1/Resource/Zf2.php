@@ -55,7 +55,14 @@ class Zf2for1_Resource_Zf2
             )
         );
 
-        $this->app = Application::init($appConfig);
+        if (!empty($_SESSION['zf2app'])) {
+            $this->app = $_SESSION['zf2app'];
+            unset($_SESSION['zf2app']);
+        }
+        else {
+            $this->app = Application::init($appConfig);
+        }
+        
         if (
             isset($options['add_sm_to_registry'])
             && $options['add_sm_to_registry'] == true
