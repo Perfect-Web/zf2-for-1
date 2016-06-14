@@ -72,7 +72,7 @@ class Zf2for1_Resource_Zf2
         $options = $this->getOptions();
 
         if (!empty($options['zf2_path'])) {
-            include_once $options['zf2_path'] . '/Zend/Loader/AutoloaderFactory.php';
+            include_once $options['zf2_path'] . '/zend-loader/src/AutoloaderFactory.php';
         }
 
         if (!class_exists('Zend\\Loader\\AutoloaderFactory', true)) {
